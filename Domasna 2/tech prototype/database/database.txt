@@ -1,0 +1,25 @@
+These are the tables for our database
+
+
+create table bank(
+id integer primary key,
+name_bank varchar(50) not null
+);
+
+create table branch(
+id integer,
+id_branch bigint,
+latitude float not null,
+longitude float not null,
+constraint fk_branch foreign key (id) references bank(id),
+constraint pk_branch primary key (id, id_branch)
+);
+
+create table atm(
+id integer,
+id_atm bigint,
+latitude float not null,
+longitude float not null,
+constraint fk_atm foreign key(id) references bank(id),
+constraint pk_atm primary key (id,id_atm) 
+);
