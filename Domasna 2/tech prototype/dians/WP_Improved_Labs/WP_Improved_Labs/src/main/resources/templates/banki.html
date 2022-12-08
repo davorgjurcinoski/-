@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+
+        header, footer.logo {
+            margin: auto;
+            text-align: center;
+        }
+        footer, header.logo {
+            margin: auto;
+            text-align: center;
+        }
+
+
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        h1{
+            text-align: center;
+            padding: 25px;
+            font-family: sans-serif;
+        }
+        h2{
+            font-size: 20px;
+        }
+        body{
+            background-color: black;
+            color: white;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+
+        }
+        .card{
+            background: black;
+            width: 300px;
+            height: 200px;
+            margin: 10px;
+            border-radius: 15px;
+            border: 2px solid white;
+            text-align: center;
+            color:white;
+        }
+        .card-image{
+            height: 150px;
+            background-color: black;
+            margin-bottom: 15px;
+            background-size: cover;
+            border-radius: 15px 15px 0 0 ;
+
+        }
+        .car1{
+            background-image: url("photos/Стопанска_банка-Лого.png");
+
+            transform: scale(0.7);
+            background-size: contain;
+            background-repeat: no-repeat;
+
+
+
+        }
+        .car2{
+            background-image: url("photos/Nova_Ljubljanska_banka_logo.svg.png");
+            transform: scale(0.7);
+            background-size: contain;
+            background-repeat: no-repeat;
+
+        }
+        .car3{
+            background-image: url("photos/sparkassse.png");
+            transform: scale(0.7);
+            background-size: contain;
+            background-repeat: no-repeat;
+
+        }
+        .car4{
+            background-image: url("photos/sparkassse.png");
+            transform: scale(0.7);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .car5{
+            background-image: url("photos/unibank-your-bank-logo.svg");
+            transform: scale(0.7);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .car6{
+            background-image: url("photos/halk-bank.png");
+            transform: scale(0.7);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .car7{
+            background-image: url("photos/komercijalna.png");
+            transform: scale(0.7);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .car8{
+            background-image: url("photos/15307PMFriday,June27,2014ckb logo.jpg");
+            transform: scale(0.7);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .car9{
+            background-image: url("photos/ttk_logo.png");
+            transform: scale(0.7);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .car10{
+            background-image: url("photos/pcb-logo.png");
+            transform: scale(0.7);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .car11{
+            background-image: url("photos/SilkRoad-bank-5.jpg");
+            transform: scale(0.7);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .prokredit{
+            background-image: url("photos/pcb-logo.png");
+            transform: scale(0.7);
+            background-size: contain;
+            background-repeat: no-repeat;
+
+        }
+        .unib{
+            background-image: url("photos/unibank-your-bank-logo.svg");
+            transform: scale(0.7);
+            background-size: contain;
+            background-repeat: no-repeat;
+
+        }
+        .halkb{
+            background-image: url("photos/halk-bank.png");
+            transform: scale(0.7);
+            background-size: contain;
+            background-repeat: no-repeat;
+
+        }
+        .komercijalna{
+            background-image: url("photos/komercijalna.png");
+            transform: scale(0.7);
+            background-size: contain;
+            background-repeat: no-repeat;
+
+        }
+        .silkb{
+            background-image: url("photos/SilkRoad-bank-5.jpg");
+            transform: scale(0.7);
+            background-size: contain;
+            background-repeat: no-repeat;
+
+        }
+        .card:hover{
+            background-color: #a4c71b;
+            cursor: pointer;
+            color: white;
+            transform: scale(1.03);
+            /*transition: all is ease;*/
+        }
+        body p{
+            margin-left: 30px;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        a:hover{
+            color: white;
+            background-color: white;
+        }
+    </style>
+
+
+<link rel="stylesheet" href="css.css">
+    <meta charset="UTF-8">
+    <title>Банки</title>
+
+</head>
+<body>
+
+<div>
+    <header>
+        <img class="logo" src="photos/logo%20bpoint.png" alt="location point">
+    </header>
+</div>
+
+<h1>Избери банка</h1>
+
+<a href="/"> <p> < Назад</p></a>
+
+
+<section class="container">
+
+<!--    vaka treba za site banki-->
+    <a href="map/stopanska">
+        <div class="card">
+            <div class="card-image car1"></div>
+            <h2>Стопанска Банка</h2>
+        </div>
+    </a>
+
+    <a href="map/stopanska">
+    <div class="card">
+        <div class="card-image car2"></div>
+        <h2>Тутунска Банка</h2>
+    </div></a>
+
+
+        <a href="map/stopanska">
+    <div class="card">
+        <div class="card-image car3"></div>
+        <h2>НБРМ</h2>
+    </div></a>
+
+
+            <a href="map/stopanska">
+    <div class="card">
+        <div class="card-image car4"></div>
+        <h2>Шпаркасе Банка</h2>
+    </div></a>
+</section>
+<section class="container">
+
+    <a href="map/stopanska">
+    <div class="card">
+        <div class="card-image car5"></div>
+        <h2>Уни Банк</h2>
+    </div></a>
+
+        <a href="map/stopanska">
+    <div class="card">
+        <div class="card-image car6"></div>
+        <h2>Халк Банка</h2>
+    </div></a>
+
+
+            <a href="map/stopanska">
+    <div class="card">
+        <div class="card-image car7"></div>
+        <h2>Комерцијална банка</h2>
+    </div></a>
+
+
+                <a href="map/stopanska">
+    <div class="card">
+        <div class="card-image car8"></div>
+        <h2>ЦКБ</h2>
+    </div></a>
+</section>
+<section class="container">
+
+    <a href="map/stopanska">
+    <div class="card">
+        <div class="card-image car9"></div>
+        <h2>ТТК Банка</h2>
+    </div></a>
+
+
+        <a href="map/stopanska">
+    <div class="card">
+        <div class="card-image car10"></div>
+        <h2>Про Кредит Банка</h2>
+    </div></a>
+
+
+            <a href="map/stopanska">
+    <div class="card">
+        <div class="card-image car11"></div>
+        <h2>Силк Роуд Банка</h2>
+    </div></a>
+
+
+                <a href="map/stopanska">
+    <div class="card">
+        <div class="card-image "></div>
+        <h2>Сите банки</h2>
+    </div></a>
+</section>
+
+<div>
+    <footer>
+        <h2>© BPOINT</h2>
+    </footer>
+</div>
+</body>
+</html>
