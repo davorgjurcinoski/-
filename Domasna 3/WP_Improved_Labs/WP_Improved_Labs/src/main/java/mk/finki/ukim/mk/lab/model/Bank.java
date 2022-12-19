@@ -1,11 +1,15 @@
 package mk.finki.ukim.mk.lab.model;
 
-
 import lombok.Data;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 @Data
 public class Bank {
 
+    @Id
     Long id;
 
     Double lat;
@@ -24,4 +28,20 @@ public class Bank {
 
     public Bank() {
     }
+
+//    public Long getId() {
+//        return id;
+//    }
+//
+//    public Double getLat() {
+//        return lat;
+//    }
+//
+//    public Double getLon() {
+//        return lon;
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
 }
