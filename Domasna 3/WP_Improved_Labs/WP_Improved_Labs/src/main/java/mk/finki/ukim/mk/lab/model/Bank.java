@@ -2,6 +2,7 @@ package mk.finki.ukim.mk.lab.model;
 
 import lombok.Data;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -16,6 +17,7 @@ public class Bank {
 
     Double lon;
 
+    @Column(name = "name_banks")
     String name;
 
 
