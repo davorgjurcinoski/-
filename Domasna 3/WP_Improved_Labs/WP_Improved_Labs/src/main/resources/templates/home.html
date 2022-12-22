@@ -105,7 +105,7 @@
             cursor: pointer;
             transform: scale(1.03);
         }
-        .card h2 {
+        .podnaslov {
             font-size: 17px;
             text-align: center;
         }
@@ -114,6 +114,46 @@
         }
     </style>
 
+    <script>
+        // Success function
+        function successFunction(value) {
+            var lat = value.coords.latitude;
+            var long = value.coords.longitude;
+            document.getElementById('error')
+                .innerHTML = "";
+            document.getElementById('latitude')
+                .innerHTML = `Latitude: ${lat}`;
+            document.getElementById('longitude')
+                .innerHTML = `Latitude: ${long}`;
+
+            document.getElementById("lat").value = lat;
+            document.getElementById("lon").value = long;
+
+            document.getElementById("lat1").value = lat;
+            document.getElementById("lon1").value = long;
+        }
+
+        // Error Function
+        function errorFunction(err) {
+            document.getElementById('latitude')
+                .innerHTML = "";
+            document.getElementById('longitude')
+                .innerHTML = "";
+            document.getElementById('error')
+                .innerHTML = `Error occurred: ${err.message}`;
+        }
+
+        // Main function to get location
+
+        navigator.geolocation
+                .getCurrentPosition(
+                    successFunction, errorFunction
+                );
+
+
+
+    </script>
+
 </head>
 <body>
 <div>
@@ -121,6 +161,8 @@
         <img class="logo" src="photos/logo%20bpoint.png" alt="location point">
     </header>
 </div>
+
+
 <div id="naslov2">
     <h2>Најди ја банката или банкоматот најблиску до тебе!</h2>
 </div>
@@ -132,21 +174,38 @@
     </ul>
 </div>
 <section class="container">
-    <a href="banks">
-        <div class="card">
-            <div class="card-image car1"></div>
-            <h2>Најди Банка</h2>
-        </div>
-    </a>
+    <h2 id="latitude" style="position: absolute; color: black; font-size: 1px"></h2>
+    <h2 id="longitude" style="position: absolute; color: black; font-size: 1px"></h2>
+    <h2 id="error" style="position: absolute; color: black; font-size: 1px"></h2>
 
-    <a href="atms">
+    <form th:action="@{/banks}" th:method="POST">
+        <input id="lat" type='hidden' name='lat' value="123456"/>
+        <input id="lon" type='hidden' name='lon' value="123456"/>
 
-        <div class="card">
-            <div class="card-image car2"></div>
-            <h2>Најди Банкомат</h2>
-        </div>
+        <button type='submit' value='Најди Банкомат' style="background-color: transparent">
+            <div class="card">
+                <div class="card-image car1"></div>
+                <h2 class="podnaslov">Најди банка</h2>
+            </div>
+        </button>
+    </form>
 
-    </a>
+
+
+
+            <form th:action="@{/atms}" th:method="POST">
+                <input id="lat1" type='hidden' name='lat' value="123456"/>
+                <input id="lon1" type='hidden' name='lon' value="123456"/>
+
+                <button type='submit' value='Најди Банкомат' style="background-color: transparent">
+                    <div class="card">
+                        <div class="card-image car2"></div>
+                        <h2 class="podnaslov">Најди банкомат</h2>
+                    </div>
+                </button>
+            </form>
+
+
 
 
 </section>

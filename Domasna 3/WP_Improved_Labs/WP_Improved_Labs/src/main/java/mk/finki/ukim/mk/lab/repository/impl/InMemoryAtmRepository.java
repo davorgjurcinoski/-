@@ -11,7 +11,7 @@ import java.util.List;
 public class InMemoryAtmRepository {
 
     //treba da vrakja atm
-    public List<Bank> findAllBanks(){
+    public List<Bank> findAllAtms(){
         return DataHolder.banks;
     }
 

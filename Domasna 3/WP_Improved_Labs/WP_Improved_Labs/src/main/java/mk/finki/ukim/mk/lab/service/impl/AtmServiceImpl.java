@@ -20,22 +20,35 @@ public class AtmServiceImpl implements AtmService {
     }
 
     @Override
-    public Bank findClosestBank(Double lan, Double lon, String name) {
-        //treba da se smeni za atm
-        List<Bank> atms = atmRepository.findAllBanks();
+    public Bank findClosestAtm(Double lan, Double lon, String name) {
 
-        //ги задржува само тие од таа банка
+        List<Bank> atms = atmRepository.findAllAtms();
+
+
+        if(name.equals("Site")){
+            atms = atms.stream()
+                    .sorted(
+                            Comparator.comparing(b -> Math.abs(lan - b.getLat()) + Math.abs(lon - b.getLon()) )
+                    ).collect(Collectors.toList());
+            return atms.get(0);
+        }
+
+
         atms = atms.stream()
-                .filter(b -> b.getName().contains(name) || b.getName().contains(name))
+                .filter(b -> b.getName().contains(name))
                 .collect(Collectors.toList());
 
-        //ги сортира според оддалеченоста од нашата локација
         atms = atms.stream()
                 .sorted(
                         Comparator.comparing(b -> Math.abs(lan - b.getLat()) + Math.abs(lon - b.getLon()) )
                 ).collect(Collectors.toList());
 
 
+
+        if (atms.isEmpty())
+        {
+            return atmRepository.findAllAtms().get(0);
+        }
 
         return atms.get(0);
     }
