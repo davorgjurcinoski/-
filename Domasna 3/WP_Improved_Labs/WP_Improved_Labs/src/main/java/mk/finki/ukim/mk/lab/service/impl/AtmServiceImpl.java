@@ -1,8 +1,8 @@
 package mk.finki.ukim.mk.lab.service.impl;
 
 
-import mk.finki.ukim.mk.lab.model.Bank;
-import mk.finki.ukim.mk.lab.repository.impl.InMemoryAtmRepository;
+import mk.finki.ukim.mk.lab.model.Atm;
+import mk.finki.ukim.mk.lab.repository.impl.AtmRepository;
 import mk.finki.ukim.mk.lab.service.AtmService;
 import org.springframework.stereotype.Service;
 
@@ -13,16 +13,16 @@ import java.util.stream.Collectors;
 @Service
 public class AtmServiceImpl implements AtmService {
 
-    private final InMemoryAtmRepository atmRepository;
+    private final AtmRepository atmRepository;
 
-    public AtmServiceImpl(InMemoryAtmRepository atmRepository) {
+    public AtmServiceImpl(AtmRepository atmRepository) {
         this.atmRepository = atmRepository;
     }
 
     @Override
-    public Bank findClosestAtm(Double lan, Double lon, String name) {
+    public Atm findClosestAtm(Double lan, Double lon, String name) {
 
-        List<Bank> atms = atmRepository.findAllAtms();
+        List<Atm> atms = atmRepository.findAll();
 
 
         if(name.equals("Site")){
@@ -47,7 +47,7 @@ public class AtmServiceImpl implements AtmService {
 
         if (atms.isEmpty())
         {
-            return atmRepository.findAllAtms().get(0);
+            return atmRepository.findAll().get(0);
         }
 
         return atms.get(0);

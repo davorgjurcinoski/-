@@ -2,6 +2,7 @@ package mk.finki.ukim.mk.lab.service.impl;
 
 
 import mk.finki.ukim.mk.lab.model.Bank;
+import mk.finki.ukim.mk.lab.repository.impl.BankRepository;
 import mk.finki.ukim.mk.lab.repository.impl.InMemoryBankRepository;
 import mk.finki.ukim.mk.lab.service.BankService;
 import org.springframework.stereotype.Service;
@@ -15,16 +16,19 @@ import java.util.stream.Collectors;
 @Service
 public class BankServiceImpl implements BankService {
 
-    private final InMemoryBankRepository bankRepository;
 
-    public BankServiceImpl(InMemoryBankRepository bankRepository) {
-        this.bankRepository = bankRepository;
+
+    //private final InMemoryBankRepository bankRepository;
+    private final BankRepository bankRepositories;
+
+    public BankServiceImpl(BankRepository bankRepositories) {
+        this.bankRepositories = bankRepositories;
     }
 
     @Override
     public Bank findClosestBank(Double lan, Double lon, String name) {
 
-        List<Bank> banks = bankRepository.findAllBanks();
+        List<Bank> banks = bankRepositories.findAll();
 
         if(name.equalsIgnoreCase("site")){
             banks = banks.stream()
@@ -47,7 +51,7 @@ public class BankServiceImpl implements BankService {
 
         if (banks.isEmpty())
         {
-            return bankRepository.findAllBanks().get(0);
+            return bankRepositories.findAll().get(0);
         }
 
         return banks.get(0);
