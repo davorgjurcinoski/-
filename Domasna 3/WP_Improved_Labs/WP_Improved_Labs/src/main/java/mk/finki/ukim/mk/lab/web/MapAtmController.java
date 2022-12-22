@@ -2,6 +2,7 @@ package mk.finki.ukim.mk.lab.web;
 
 
 
+import mk.finki.ukim.mk.lab.model.Atm;
 import mk.finki.ukim.mk.lab.model.Bank;
 import mk.finki.ukim.mk.lab.service.AtmService;
 import org.springframework.stereotype.Controller;
@@ -29,7 +30,7 @@ public class MapAtmController {
         Double myLat = (double) httpServletRequest.getSession().getAttribute("lat");
         Double muLon = (double) httpServletRequest.getSession().getAttribute("lon");;
 
-        Bank atm = atmService.findClosestAtm(myLat,muLon,bankomat);
+        Atm atm = atmService.findClosestAtm(myLat,muLon,bankomat);
 
         Double bankLat = atm.getLat();
         Double bankLon = atm.getLon();
