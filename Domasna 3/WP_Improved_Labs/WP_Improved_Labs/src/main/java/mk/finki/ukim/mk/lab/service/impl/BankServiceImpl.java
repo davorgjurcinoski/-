@@ -26,8 +26,16 @@ public class BankServiceImpl implements BankService {
 
         List<Bank> banks = bankRepository.findAllBanks();
 
+        if(name.equalsIgnoreCase("site")){
+            banks = banks.stream()
+                    .sorted(
+                            Comparator.comparing(b -> Math.abs(lan - b.getLat()) + Math.abs(lon - b.getLon()) )
+                    ).collect(Collectors.toList());
+            return banks.get(0);
+        }
+
         banks = banks.stream()
-                .filter(b -> b.getName().contains("Stopanska") || b.getName().contains("Стопанска"))
+                .filter(b -> b.getName().contains(name))
                 .collect(Collectors.toList());
 
         banks = banks.stream()
@@ -36,6 +44,11 @@ public class BankServiceImpl implements BankService {
                 ).collect(Collectors.toList());
 
 
+
+        if (banks.isEmpty())
+        {
+            return bankRepository.findAllBanks().get(0);
+        }
 
         return banks.get(0);
     }

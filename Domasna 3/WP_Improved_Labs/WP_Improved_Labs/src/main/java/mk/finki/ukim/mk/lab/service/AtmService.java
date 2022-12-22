@@ -4,5 +4,5 @@ import mk.finki.ukim.mk.lab.model.Bank;
 
 public interface AtmService {
 
-    public Bank findClosestBank (Double lan, Double lon, String name);
+    public Bank findClosestAtm (Double lan, Double lon, String name);
 }
