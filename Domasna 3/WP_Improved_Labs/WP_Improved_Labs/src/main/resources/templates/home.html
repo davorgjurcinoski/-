@@ -8,8 +8,10 @@
     <style>
         body {
             color: white;
-            background-color: black;
+            /*background: linear-gradient(45deg,#060606,#1f1f1f);*/
+            background-size: cover;
             font-family: sans-serif;
+            background-color: black;
         }
         * {
             margin: 0;
@@ -19,24 +21,25 @@
             background-color: black;
             height: 80px;
             width: auto;
+            padding-bottom: 20px;
         }
-        footer {
-            position: absolute;
-            background-color: black;
-            height: 80px;
-            width: auto;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            color: white;
-        }
-        footer h2 {
-            text-align: center;
-            margin-top: 28px;
-            font-size: 18px;
-            font-weight: normal;
-            font-family: Serif;
-        }
+        /*footer {*/
+        /*    position: absolute;*/
+        /*    background-color: black;*/
+        /*    height: 80px;*/
+        /*    width: auto;*/
+        /*    bottom: 0;*/
+        /*    right: 0;*/
+        /*    left: 0;*/
+        /*    color: white;*/
+        /*}*/
+        /*footer h2 {*/
+        /*    text-align: center;*/
+        /*    margin-top: 28px;*/
+        /*    font-size: 18px;*/
+        /*    font-weight: normal;*/
+        /*    font-family: Serif;*/
+        /*}*/
         header, footer.logo {
             margin: auto;
             text-align: center;
@@ -53,10 +56,12 @@
             padding: 0;
             margin: 0;
             text-align: center;
+            /*padding-top: 20px;*/
+            /*text-align: center;*/
         }
         .filijali li {
             display: inline-block;
-            font-size: 18px;
+            font-size: 20px;
         }
         .filijali p {
             width: 100px;
@@ -68,50 +73,76 @@
             font-weight: bold;
         }
         .container {
+            margin-top: 20px;
             display: flex;
             justify-content: center;
         }
         .card {
             color: white;
-            background-color: black;
-            width: 180px;
-            height: 200px;
-            margin: 30px;
+            /*background: linear-gradient(45deg,#060606,#1f1f1f);*/
+            /*background-size: cover;*/
+            width: 240px;
+            height: 280px;
+            margin: 32px;
             border-radius: 15px;
             border: 1px solid white;
+            background-color: black;
         }
         .card-image {
             height: 180px;
-            margin-bottom: -15px;
             background-size: cover;
             border-radius: 15px 15px 0 0;
+            margin-left: 25px;
+            margin-top: 15px;
         }
         .car1 {
-            background-image: url("photos/Bank-PNG-Transparent-Image.png") ;
+            background-image: url("photos/BANK bel.png") ;
             transform: scale(0.7);
             background-size: contain;
             background-repeat: no-repeat;
             text-align: center;
+            padding-left: 50px;
         }
         .car2 {
-            background-image: url("photos/127824.png");
-            transform: scale(0.45);
+            background-image: url("photos/ATM bel.png");
+            transform: scale(0.7);
             background-size: contain;
             background-repeat: no-repeat;
         }
         .card:hover {
-            background-color: #a4c71b;
+            background-image: linear-gradient(90deg,#437d21,#59A52C,#6fca3a,#8dd562);
             color: black;
             cursor: pointer;
             transform: scale(1.03);
         }
+        form:hover #hover-banks{
+            content: url("photos/—Pngtree—vector bank icon_4046246.png");
+            padding-left: 0;
+            transform: scale(0.70);
+
+        }
+
+
+        form:hover #hover-atm{
+            background-image: url("photos/ATM crn.png");
+            transform: scale(0.58);
+            margin-left: 23px;
+        }
+        .card h2 {
+            font-size: 17px;
+            text-align: center;
+            margin-top: 35px;
+        }
+
         .podnaslov {
             font-size: 17px;
             text-align: center;
         }
         #naslov2 {
-            font-size: 15px;
+            font-size: 30px;
         }
+
+
     </style>
 
     <script>
@@ -164,13 +195,13 @@
 
 
 <div id="naslov2">
-    <h2>Најди ја банката или банкоматот најблиску до тебе!</h2>
+    <h2>Најди ја банката или банкоматот <br> најблиску до тебе!</h2>
 </div>
 <div class="filijali">
     <ul>
-        <li><p><span> 11 </span><br> Банки</p></li>
-        <li><p><span> 80+ </span><br> Филијали</p></li>
-        <li><p><span> 60+ </span> <br> Банкомати</p></li>
+        <li style="padding-right: 45px"><p><span style="font-size: 35px"> 11 </span><br> Банки</p></li>
+        <li><p><span style="font-size: 35px"> 80+ </span><br> Филијали</p></li>
+        <li style="padding-left: 45px"><p><span style="font-size: 35px"> 60+ </span> <br> Банкомати</p></li>
     </ul>
 </div>
 <section class="container">
@@ -184,8 +215,19 @@
 
         <button type='submit' value='Најди Банкомат' style="background-color: transparent">
             <div class="card">
-                <div class="card-image car1"></div>
+                <div class="card-image car1" id="hover-banks"></div>
                 <h2 class="podnaslov">Најди банка</h2>
+            </div>
+        </button>
+    </form>
+    <form th:action="@{/atms}" th:method="POST">
+        <input id="lat1" type='hidden' name='lat' value="123456"/>
+        <input id="lon1" type='hidden' name='lon' value="123456"/>
+
+        <button type='submit' value='Најди Банкомат' style="background-color: transparent">
+            <div class="card">
+                <div class="card-image car2" id="hover-atm"></div>
+                <h2 class="podnaslov">Најди банкомат</h2>
             </div>
         </button>
     </form>
@@ -193,26 +235,11 @@
 
 
 
-            <form th:action="@{/atms}" th:method="POST">
-                <input id="lat1" type='hidden' name='lat' value="123456"/>
-                <input id="lon1" type='hidden' name='lon' value="123456"/>
-
-                <button type='submit' value='Најди Банкомат' style="background-color: transparent">
-                    <div class="card">
-                        <div class="card-image car2"></div>
-                        <h2 class="podnaslov">Најди банкомат</h2>
-                    </div>
-                </button>
-            </form>
-
-
-
-
 </section>
-<div>
-    <footer>
-        <h2>© BPOINT</h2>
-    </footer>
-</div>
+<!--<div>-->
+<!--    <footer>-->
+<!--        <h2>© BPOINT</h2>-->
+<!--    </footer>-->
+<!--</div>-->
 </body>
 </html>
