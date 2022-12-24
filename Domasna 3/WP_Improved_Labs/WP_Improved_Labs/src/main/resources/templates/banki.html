@@ -26,7 +26,9 @@
             font-family: sans-serif;
         }
         h2{
-            font-size: 20px;
+            /*font-size: 20px;*/
+            font-size: 17px;
+            padding-top: 25px;
         }
         body{
             background-color: black;
@@ -35,7 +37,7 @@
         .container{
             display: flex;
             justify-content: center;
-            padding: 20px;
+            padding: 17px 20px 17px 20px;
 
         }
         .card{
@@ -49,7 +51,7 @@
             color:white;
         }
         .card-image{
-            height: 150px;
+            height: 90px;
             background-color: black;
             margin-bottom: 15px;
             background-size: cover;
@@ -58,26 +60,30 @@
         }
         .car1{
             background-image: url("photos/Стопанска_банка-Лого.png");
-
             transform: scale(0.7);
             background-size: contain;
             background-repeat: no-repeat;
 
-
-
+            margin-left: 45px;
+            margin-top: 25px;
         }
         .car2{
             background-image: url("photos/Nova_Ljubljanska_banka_logo.svg.png");
-            transform: scale(0.7);
+            transform: scale(0.65);
             background-size: contain;
             background-repeat: no-repeat;
 
+            margin-left: 45px;
+            margin-top: 25px;
+
         }
         .car3{
-            background-image: url("photos/sparkassse.png");
-            transform: scale(0.7);
+            background-image: url("photos/narodna banka na mk.png");
+            transform: scale(0.8);
             background-size: contain;
             background-repeat: no-repeat;
+
+            margin-top: 25px;
 
         }
         .car4{
@@ -85,86 +91,111 @@
             transform: scale(0.7);
             background-size: contain;
             background-repeat: no-repeat;
+
+            margin-top: 25px;
         }
         .car5{
             background-image: url("photos/unibank-your-bank-logo.svg");
             transform: scale(0.7);
             background-size: contain;
             background-repeat: no-repeat;
+
+            margin-top: 25px;
         }
         .car6{
             background-image: url("photos/halk-bank.png");
             transform: scale(0.7);
             background-size: contain;
             background-repeat: no-repeat;
+
+            margin-top: 25px;
         }
         .car7{
             background-image: url("photos/komercijalna.png");
             transform: scale(0.7);
             background-size: contain;
             background-repeat: no-repeat;
+
+            margin-top: 25px;
         }
         .car8{
             background-image: url("photos/15307PMFriday,June27,2014ckb logo.jpg");
             transform: scale(0.7);
             background-size: contain;
             background-repeat: no-repeat;
+
+            margin-top: 25px;
+            margin-left: 10px;
         }
         .car9{
             background-image: url("photos/ttk_logo.png");
-            transform: scale(0.7);
+            transform: scale(0.6);
             background-size: contain;
             background-repeat: no-repeat;
+
+            margin-top: 25px;
         }
         .car10{
             background-image: url("photos/pcb-logo.png");
-            transform: scale(0.7);
+            transform: scale(0.8);
             background-size: contain;
             background-repeat: no-repeat;
+
+            margin-top: 25px;
+            margin-right: 20px;
         }
         .car11{
             background-image: url("photos/SilkRoad-bank-5.jpg");
-            transform: scale(0.7);
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
-        .prokredit{
-            background-image: url("photos/pcb-logo.png");
-            transform: scale(0.7);
+            transform: scale(0.9);
             background-size: contain;
             background-repeat: no-repeat;
 
+            margin-top: 25px;
+            margin-left: 45px;
         }
-        .unib{
-            background-image: url("photos/unibank-your-bank-logo.svg");
-            transform: scale(0.7);
-            background-size: contain;
-            background-repeat: no-repeat;
 
+        .car12{
+            margin-top: 25px;
         }
-        .halkb{
-            background-image: url("photos/halk-bank.png");
-            transform: scale(0.7);
-            background-size: contain;
-            background-repeat: no-repeat;
 
-        }
-        .komercijalna{
-            background-image: url("photos/komercijalna.png");
-            transform: scale(0.7);
-            background-size: contain;
-            background-repeat: no-repeat;
 
-        }
-        .silkb{
-            background-image: url("photos/SilkRoad-bank-5.jpg");
-            transform: scale(0.7);
-            background-size: contain;
-            background-repeat: no-repeat;
+        /*.prokredit{*/
+        /*    background-image: url("photos/pcb-logo.png");*/
+        /*    transform: scale(0.7);*/
+        /*    background-size: contain;*/
+        /*    background-repeat: no-repeat;*/
 
-        }
+        /*}*/
+        /*.unib{*/
+        /*    background-image: url("photos/unibank-your-bank-logo.svg");*/
+        /*    transform: scale(0.7);*/
+        /*    background-size: contain;*/
+        /*    background-repeat: no-repeat;*/
+
+        /*}*/
+        /*.halkb{*/
+        /*    background-image: url("photos/halk-bank.png");*/
+        /*    transform: scale(0.7);*/
+        /*    background-size: contain;*/
+        /*    background-repeat: no-repeat;*/
+
+        /*}*/
+        /*.komercijalna{*/
+        /*    background-image: url("photos/komercijalna.png");*/
+        /*    transform: scale(0.7);*/
+        /*    background-size: contain;*/
+        /*    background-repeat: no-repeat;*/
+
+        /*}*/
+        /*.silkb{*/
+        /*    background-image: url("photos/SilkRoad-bank-5.jpg");*/
+        /*    transform: scale(0.7);*/
+        /*    background-size: contain;*/
+        /*    background-repeat: no-repeat;*/
+
+        /*}*/
         .card:hover{
-            background-color: #a4c71b;
+            /*background-color: #a4c71b;*/
             cursor: pointer;
             color: white;
             transform: scale(1.03);
@@ -177,9 +208,12 @@
             color: white;
             text-decoration: none;
         }
-        a:hover{
-            color: white;
-            background-color: white;
+        .izberi {
+            font-size: 27px;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 50px;
+            font-family: sans-serif;
         }
     </style>
 
@@ -197,9 +231,13 @@
     </header>
 </div>
 
-<h1>Избери банка</h1>
+<div class="izberi">
+    <p>Избери банка<p>
+</div>
 
-<a href="/"> <p> < Назад</p></a>
+<a href="/">
+    <img src="photos/rewind.png" style="width: 100px; height: 80px;">
+</a>
 
 
 <section class="container">
@@ -246,19 +284,19 @@
         <h2>Халк Банка</h2>
     </div></a>
 
-
-            <a href="map/Komercijalna">
+    <a href="map/Komercijalna">
     <div class="card">
         <div class="card-image car7"></div>
         <h2>Комерцијална банка</h2>
-    </div></a>
+    </div>
+    </a>
 
-
-                <a href="map/Centralna">
+    <a href="map/Centralna">
     <div class="card">
         <div class="card-image car8"></div>
         <h2>ЦКБ</h2>
-    </div></a>
+    </div>
+    </a>
 </section>
 <section class="container">
 
@@ -285,15 +323,10 @@
 
                 <a href="map/site">
     <div class="card">
-        <div class="card-image "></div>
+        <div class="card-image car12"></div>
         <h2>Сите банки</h2>
     </div></a>
 </section>
 
-<div>
-    <footer>
-        <h2>© BPOINT</h2>
-    </footer>
-</div>
 </body>
 </html>
