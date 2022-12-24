@@ -181,6 +181,13 @@
                     successFunction, errorFunction
                 );
 
+        function onclickFun(){
+            navigator.geolocation
+                .getCurrentPosition(
+                    successFunction, errorFunction
+                );
+        }
+
 
 
     </script>
@@ -214,7 +221,7 @@
         <input id="lon" type='hidden' name='lon' value="123456"/>
 
         <button type='submit' value='Најди Банкомат' style="background-color: transparent">
-            <div class="card">
+            <div class="card" onclick="onclickFun()">
                 <div class="card-image car1" id="hover-banks"></div>
                 <h2 class="podnaslov">Најди банка</h2>
             </div>
@@ -225,7 +232,7 @@
         <input id="lon1" type='hidden' name='lon' value="123456"/>
 
         <button type='submit' value='Најди Банкомат' style="background-color: transparent">
-            <div class="card">
+            <div class="card" onclick="onclickFun()">
                 <div class="card-image car2" id="hover-atm"></div>
                 <h2 class="podnaslov">Најди банкомат</h2>
             </div>

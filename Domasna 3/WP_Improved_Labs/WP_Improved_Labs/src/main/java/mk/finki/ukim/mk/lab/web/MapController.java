@@ -38,6 +38,15 @@ public class MapController {
 
 
 
+        if(!bank.getName().equalsIgnoreCase("site")){
+            model.addAttribute("imeBanka", bank.getName());
+        }
+        else {
+            model.addAttribute("imeBanka", "банка");
+        }
+
+
+
 
         //hardcode bug fix
         if (myLat == 123456){

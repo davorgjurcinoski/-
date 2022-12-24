@@ -37,6 +37,15 @@ public class MapAtmController {
         model.addAttribute("lat", bankLat);
         model.addAttribute("lon", bankLon);
 
+        if(!atm.getName().equalsIgnoreCase("site")){
+            model.addAttribute("imeBanka", atm.getName());
+        }
+        else {
+            model.addAttribute("imeBanka", "банкомат");
+        }
+
+
+
 
         //hardcode bug fix
         if (myLat == 123456){
