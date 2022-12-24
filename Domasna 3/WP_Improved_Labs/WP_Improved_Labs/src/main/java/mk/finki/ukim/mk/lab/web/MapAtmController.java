@@ -26,9 +26,12 @@ public class MapAtmController {
     @GetMapping
     public String getLoginPage(@PathVariable String bankomat, Model model, HttpServletRequest httpServletRequest) {
 
+
         //funkcionira
         Double myLat = (double) httpServletRequest.getSession().getAttribute("lat");
         Double muLon = (double) httpServletRequest.getSession().getAttribute("lon");;
+
+        httpServletRequest.getSession().invalidate();
 
         Atm atm = atmService.findClosestAtm(myLat,muLon,bankomat);
 
