@@ -26,11 +26,16 @@ public class MapAtmController {
     @GetMapping
     public String getLoginPage(@PathVariable String bankomat, Model model, HttpServletRequest httpServletRequest) {
 
-
+        if (httpServletRequest.getSession().getAttribute("lat") == null) return "home";
         //funkcionira
         Double myLat = (double) httpServletRequest.getSession().getAttribute("lat");
-        Double muLon = (double) httpServletRequest.getSession().getAttribute("lon");;
+        Double muLon = (double) httpServletRequest.getSession().getAttribute("lon");
 
+        model.addAttribute("myLat", myLat);
+        model.addAttribute("muLon", muLon);
+
+        httpServletRequest.getSession().removeAttribute("lat");
+        httpServletRequest.getSession().removeAttribute("lon");
         httpServletRequest.getSession().invalidate();
 
         Atm atm = atmService.findClosestAtm(myLat,muLon,bankomat);
