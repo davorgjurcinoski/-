@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Најблиска локација</title>
+
+    <style>
+
+        header, footer.logo {
+            margin: auto;
+            text-align: center;
+        }
+
+        footer, header.logo {
+            margin: auto;
+            text-align: center;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+
+
+        }
+
+        .bodyContainer {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+
+        }
+    </style>
+
+
+</head>
+<body>
+
+<div class="bodyContainer">
+    <div class="container">
+
+        <h1>Најблиската локација на
+            <th:span th:text="${imeBanka}"></th:span>
+            е:
+        </h1>
+
+
+        <div>
+
+
+            <iframe width="1500" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                    th:src="@{${'https://www.openstreetmap.org/export/embed.html?bbox=21.343259811401367%2C41.971869289006825%2C21.45363807678223%2C42.01594868551881&amp;layer=mapnik&amp;marker=' + lat +'%2C' + lon}}"
+                    style="border: 1px solid black">
+                <br/><small><a
+                    href="https://www.openstreetmap.org/?mlat=41.9939&amp;mlon=21.3984#map=14/41.9939/21.3984&amp;layers=N">View
+                Larger Map</a></small>
+            </iframe>
+
+
+            <br> Твојата локација е:
+            <br>
+            <div th:text="${myLat}"></div>
+            <div th:text="${muLon}"></div>
+
+        </div>
+    </div>
+</div>
+
+<div>
+    <footer>
+        <h2>© BPOINT</h2>
+    </footer>
+</div>
+</body>
+</html>
